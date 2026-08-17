@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RecordQuick – Privacy Policy</title>
+<meta name="description" content="RecordQuick privacy policy — how we handle your data.">
+<style>
+  :root {
+    --bg: #fff;
+    --bg2: #f5f5f7;
+    --text: #1d1d1f;
+    --text2: #6e6e73;
+    --accent: #1d1d1f;
+    --border: #d2d2d7;
+    --card: #fff;
+    --shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #000;
+      --bg2: #111;
+      --text: #f5f5f7;
+      --text2: #86868b;
+      --accent: #f5f5f7;
+      --border: #2d2d2d;
+      --card: #1c1c1e;
+      --shadow: 0 4px 24px rgba(0,0,0,0.5);
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 52px;
+  }
+  @media (prefers-color-scheme: dark) {
+    nav { background: rgba(0,0,0,0.85); }
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+  .nav-logo-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--text); display: flex; align-items: center; justify-content: center; }
+  .nav-logo-icon svg { width: 18px; height: 18px; }
+  .nav-logo-name { font-size: 17px; font-weight: 600; }
+  .nav-right { display: flex; align-items: center; gap: 16px; }
+  .lang-toggle { display: flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .lang-toggle button { padding: 4px 12px; font-size: 13px; border: none; background: transparent; color: var(--text2); cursor: pointer; font-family: inherit; }
+  .lang-toggle button.active { background: var(--text); color: var(--bg); }
+  .back-link { font-size: 13px; color: var(--text2); text-decoration: none; }
+  .back-link:hover { color: var(--text); }
+
+  .hero {
+    background: var(--bg2);
+    padding: 64px 24px 48px;
+    text-align: center;
+  }
+  .hero h1 { font-size: 40px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+  .hero-sub { font-size: 15px; color: var(--text2); }
+
+  .content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 24px 80px;
+  }
+  .updated { font-size: 13px; color: var(--text2); margin-bottom: 48px; }
+  h2 { font-size: 22px; font-weight: 600; margin: 40px 0 12px; }
+  h2:first-of-type { margin-top: 0; }
+  p { font-size: 15px; color: var(--text2); margin-bottom: 16px; }
+  p strong { color: var(--text); }
+  ul { margin: 0 0 16px 20px; }
+  li { font-size: 15px; color: var(--text2); margin-bottom: 6px; }
+  li strong { color: var(--text); }
+
+  .callout {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .callout p { margin: 0; color: var(--text); font-weight: 500; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 24px;
+    text-align: center;
+    font-size: 13px; color: var(--text2);
+    display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+  }
+  footer a { color: var(--text2); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+
+  html[data-lang="en"] [data-ja] { display: none !important; }
+  html[data-lang="ja"] [data-en] { display: none !important; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 18 18" fill="white">
+        <circle cx="9" cy="9" r="7" stroke="white" stroke-width="1.5" fill="none"/>
+        <circle cx="9" cy="9" r="3.5" fill="white"/>
+      </svg>
+    </div>
+    <span class="nav-logo-name">RecordQuick</span>
+  </a>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="btn-ja" onclick="setLang('ja')">日本語</button>
+    </div>
+    <a href="index.html" class="back-link">
+      <span data-en>← Support</span>
+      <span data-ja>← サポート</span>
+    </a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1 data-en>Privacy Policy</h1>
+  <h1 data-ja>プライバシーポリシー</h1>
+  <div class="hero-sub" data-en>RecordQuick — by Kohei Ishikawa</div>
+  <div class="hero-sub" data-ja>RecordQuick — Kohei Ishikawa 著</div>
+</div>
+
+<!-- ENGLISH -->
+<div data-en>
+<div class="content">
+  <p class="updated">Last updated: August 17, 2026</p>
+
+  <div class="callout">
+    <p>RecordQuick does not collect, transmit, or sell your personal data. Your recordings stay on your device or in your personal iCloud account.</p>
+  </div>
+
+  <h2>1. Overview</h2>
+  <p>RecordQuick ("the App") is a voice recording application for iPhone, iPad, Mac, and Apple Watch developed by Kohei Ishikawa ("we," "us," or "our"). This Privacy Policy explains what information the App accesses, how it is used, and how it is protected.</p>
+  <p>By using RecordQuick, you agree to the practices described in this policy. If you do not agree, please discontinue use of the App.</p>
+
+  <h2>2. Data We Do Not Collect</h2>
+  <p>RecordQuick does <strong>not</strong> collect, store on our servers, or share:</p>
+  <ul>
+    <li>Audio recordings or transcripts</li>
+    <li>Device identifiers or advertising identifiers</li>
+    <li>Location data</li>
+    <li>Usage analytics or behavioral tracking data</li>
+    <li>Crash logs transmitted to our servers</li>
+    <li>Contacts, photos, or any other personal data</li>
+  </ul>
+  <p>There is no backend server associated with RecordQuick. No data is transmitted to us or to any third party.</p>
+
+  <h2>3. Data Stored on Your Device</h2>
+  <p>The App stores the following data locally on your device within the application's private container:</p>
+  <ul>
+    <li><strong>Audio files</strong> — recordings you create using the App</li>
+    <li><strong>Transcript text</strong> — speech-to-text output generated on your device</li>
+    <li><strong>Metadata</strong> — titles, dates, durations, formats, and playback positions</li>
+    <li><strong>Settings</strong> — your preferences such as audio format, language, and sort order</li>
+  </ul>
+  <p>All of this data remains entirely under your control. Deleting the App permanently removes all locally stored data.</p>
+
+  <h2>4. iCloud Storage (Optional)</h2>
+  <p>If you enable iCloud storage within the App, your recordings, transcripts, and metadata are synced to your personal iCloud account via Apple's CloudKit and iCloud Drive infrastructure. This data:</p>
+  <ul>
+    <li>Is stored in your private iCloud account, not on our servers</li>
+    <li>Is governed by <a href="https://www.apple.com/legal/privacy/" style="color:inherit">Apple's Privacy Policy</a></li>
+    <li>Is accessible to you across devices signed in to the same Apple ID</li>
+    <li>Can be deleted from iCloud via iCloud Drive or the App's settings</li>
+  </ul>
+  <p>iCloud storage is entirely optional. The App works fully in local-only mode without iCloud.</p>
+
+  <h2>5. Microphone Access</h2>
+  <p>The App requests access to your device's microphone solely to record audio at your explicit direction. Audio captured by the microphone is never transmitted off your device during recording. The microphone is only active when you have started a recording.</p>
+
+  <h2>6. Speech Recognition</h2>
+  <p>RecordQuick uses Apple's on-device Speech framework (<code>SFSpeechRecognizer</code>) for transcription. <strong>Speech processing occurs entirely on your device.</strong> Your audio is not sent to Apple's servers or any third-party service for transcription within the App.</p>
+  <p>On older OS versions where on-device recognition is unavailable, the App will clearly disclose if a network request is required before initiating transcription.</p>
+
+  <h2>7. Permissions</h2>
+  <p>The App may request the following system permissions:</p>
+  <ul>
+    <li><strong>Microphone</strong> — required to record audio</li>
+    <li><strong>Speech Recognition</strong> — required to transcribe recordings</li>
+    <li><strong>iCloud / CloudKit</strong> — optional, required only if iCloud storage is enabled</li>
+  </ul>
+  <p>You can revoke any permission at any time in your device's Settings app. Revoking microphone access will prevent recording; other features continue to work.</p>
+
+  <h2>8. No Third-Party SDKs</h2>
+  <p>RecordQuick does not include any third-party analytics, advertising, crash reporting, or tracking SDKs. All functionality is implemented using Apple's first-party frameworks.</p>
+
+  <h2>9. Children's Privacy</h2>
+  <p>RecordQuick is not directed at children under 13. We do not knowingly collect personal information from children. If you believe a child has provided personal information, please contact us so we can take appropriate action.</p>
+
+  <h2>10. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. Material changes will be noted in the App's release notes and reflected in the "Last updated" date above. Continued use of the App after changes constitutes acceptance.</p>
+
+  <h2>11. Contact</h2>
+  <p>If you have questions or concerns about this Privacy Policy, please contact:</p>
+  <p><strong>Kohei Ishikawa</strong><br><a href="mailto:kouhei1@gmail.com" style="color:inherit">kouhei1@gmail.com</a></p>
+
+  <h2>12. Legal Compliance Notice</h2>
+  <p>Recording conversations without the consent of all parties may be illegal in your jurisdiction. Users are solely responsible for ensuring that their use of RecordQuick complies with all applicable laws, regulations, workplace rules, and confidentiality obligations.</p>
+</div>
+</div>
+
+<!-- JAPANESE -->
+<div data-ja>
+<div class="content">
+  <p class="updated">最終更新日：2026年8月17日</p>
+
+  <div class="callout">
+    <p>RecordQuick はユーザーの個人データを収集・送信・販売しません。録音はデバイス上またはご自身の iCloud アカウント内に保存されます。</p>
+  </div>
+
+  <h2>1. 概要</h2>
+  <p>RecordQuick（以下「本アプリ」）は、Kohei Ishikawa（以下「私たち」）が開発した iPhone・iPad・Mac・Apple Watch 向けのボイスレコーダーアプリです。このプライバシーポリシーでは、本アプリがアクセスする情報、その利用方法、および保護の方針について説明します。</p>
+  <p>RecordQuick を使用することで、このポリシーに記載された内容に同意したものとみなします。</p>
+
+  <h2>2. 収集しないデータ</h2>
+  <p>RecordQuick は以下のデータを<strong>収集・サーバーへの保存・第三者への提供を一切行いません</strong>：</p>
+  <ul>
+    <li>音声録音や文字起こしの内容</li>
+    <li>デバイス識別子や広告識別子</li>
+    <li>位置情報</li>
+    <li>利用状況の分析・行動追跡データ</li>
+    <li>サーバーへ送信されるクラッシュログ</li>
+    <li>連絡先・写真・その他の個人データ</li>
+  </ul>
+  <p>RecordQuick にはバックエンドサーバーが存在しません。私たちや第三者へのデータ送信は一切ありません。</p>
+
+  <h2>3. デバイス上に保存されるデータ</h2>
+  <p>本アプリはアプリケーションのプライベートコンテナ内にのみ以下のデータをデバイス上に保存します：</p>
+  <ul>
+    <li><strong>音声ファイル</strong> — アプリで作成した録音</li>
+    <li><strong>文字起こしテキスト</strong> — デバイス内で生成された音声認識の結果</li>
+    <li><strong>メタデータ</strong> — タイトル・日時・時間・フォーマット・再生位置</li>
+    <li><strong>設定</strong> — 音声フォーマット・言語・並び替え順などの設定値</li>
+  </ul>
+  <p>これらのデータはすべてユーザーの管理下に置かれます。アプリを削除するとローカルに保存されたデータもすべて消去されます。</p>
+
+  <h2>4. iCloud ストレージ（任意）</h2>
+  <p>アプリ内で iCloud ストレージを有効にした場合、録音・文字起こし・メタデータが Apple の CloudKit および iCloud Drive を通じてご自身の iCloud アカウントに同期されます。このデータは：</p>
+  <ul>
+    <li>私たちのサーバーではなく、ご自身の iCloud アカウントに保存されます</li>
+    <li><a href="https://www.apple.com/jp/legal/privacy/" style="color:inherit">Apple のプライバシーポリシー</a>に準拠します</li>
+    <li>同じ Apple ID でサインインした端末からアクセスできます</li>
+    <li>iCloud Drive またはアプリの設定から削除できます</li>
+  </ul>
+  <p>iCloud ストレージは任意機能です。ローカルのみのモードでもアプリは完全に動作します。</p>
+
+  <h2>5. マイクへのアクセス</h2>
+  <p>本アプリは、ユーザーの明示的な指示による録音のみを目的としてマイクへのアクセスを要求します。録音中にキャプチャされた音声がデバイス外に送信されることはありません。マイクは録音を開始した場合のみアクティブになります。</p>
+
+  <h2>6. 音声認識</h2>
+  <p>RecordQuick は文字起こしに Apple のデバイス内 Speech フレームワーク（<code>SFSpeechRecognizer</code>）を使用します。<strong>音声処理はすべてデバイス上で行われます。</strong>文字起こしのために音声が Apple のサーバーや第三者サービスに送信されることはありません。</p>
+  <p>デバイス内認識が利用できない旧 OS バージョンでは、文字起こしを開始する前にネットワーク接続が必要な旨を明示します。</p>
+
+  <h2>7. 許可（パーミッション）</h2>
+  <p>本アプリは以下のシステムパーミッションを要求する場合があります：</p>
+  <ul>
+    <li><strong>マイク</strong> — 録音に必要</li>
+    <li><strong>音声認識</strong> — 文字起こしに必要</li>
+    <li><strong>iCloud / CloudKit</strong> — 任意。iCloud ストレージを有効にした場合のみ必要</li>
+  </ul>
+  <p>いずれの許可もデバイスの「設定」アプリからいつでも取り消せます。マイクの許可を取り消すと録音が行えなくなりますが、他の機能は引き続き使用できます。</p>
+
+  <h2>8. サードパーティ SDK なし</h2>
+  <p>RecordQuick はサードパーティの分析・広告・クラッシュレポート・トラッキング SDK を一切使用していません。すべての機能は Apple ファーストパーティのフレームワークで実装されています。</p>
+
+  <h2>9. 子どものプライバシー</h2>
+  <p>RecordQuick は 13 歳未満の子どもを対象としていません。子どもの個人情報が提供されたと思われる場合は、適切な対応を取るためにご連絡ください。</p>
+
+  <h2>10. ポリシーの変更</h2>
+  <p>このプライバシーポリシーは随時更新される場合があります。重要な変更はアプリのリリースノートで通知し、上記の「最終更新日」に反映されます。変更後も引き続きアプリを使用することで変更内容に同意したものとみなします。</p>
+
+  <h2>11. お問い合わせ</h2>
+  <p>このプライバシーポリシーに関するご質問・ご不明点は以下までご連絡ください：</p>
+  <p><strong>Kohei Ishikawa</strong><br><a href="mailto:kouhei1@gmail.com" style="color:inherit">kouhei1@gmail.com</a></p>
+
+  <h2>12. 法的コンプライアンスに関する注意</h2>
+  <p>会話を相手の同意なく録音することは、管轄地域の法律に違反する場合があります。RecordQuick の使用が適用法令・規制・職場規則・守秘義務に準拠しているかどうかは、ユーザー自身の責任において確認してください。</p>
+</div>
+</div>
+
+<footer>
+  <span>© 2026 RecordQuick</span>
+  <a href="index.html" data-en>Support</a>
+  <a href="index.html" data-ja>サポート</a>
+  <a href="mailto:kouhei1@gmail.com">kouhei1@gmail.com</a>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.documentElement.setAttribute('data-lang', lang);
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
+  localStorage.setItem('rq-lang', lang);
+}
+const saved = localStorage.getItem('rq-lang');
+if (saved === 'ja') setLang('ja');
+</script>
+</body>
+</html>

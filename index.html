@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RecordQuick – Support</title>
+<meta name="description" content="RecordQuick support page — how to use the app, screenshots, and contact.">
+<style>
+  :root {
+    --bg: #fff;
+    --bg2: #f5f5f7;
+    --text: #1d1d1f;
+    --text2: #6e6e73;
+    --accent: #1d1d1f;
+    --border: #d2d2d7;
+    --card: #fff;
+    --shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #000;
+      --bg2: #111;
+      --text: #f5f5f7;
+      --text2: #86868b;
+      --accent: #f5f5f7;
+      --border: #2d2d2d;
+      --card: #1c1c1e;
+      --shadow: 0 4px 24px rgba(0,0,0,0.5);
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 52px;
+  }
+  @media (prefers-color-scheme: dark) {
+    nav { background: rgba(0,0,0,0.85); }
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+  .nav-logo-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: var(--text); display: flex; align-items: center; justify-content: center;
+  }
+  .nav-logo-icon svg { width: 18px; height: 18px; }
+  .nav-logo-name { font-size: 17px; font-weight: 600; }
+  .nav-right { display: flex; align-items: center; gap: 16px; }
+  .lang-toggle {
+    display: flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+  }
+  .lang-toggle button {
+    padding: 4px 12px; font-size: 13px; border: none;
+    background: transparent; color: var(--text2); cursor: pointer;
+    font-family: inherit;
+  }
+  .lang-toggle button.active { background: var(--text); color: var(--bg); }
+  .nav-privacy { font-size: 13px; color: var(--text2); text-decoration: none; }
+  .nav-privacy:hover { color: var(--text); }
+
+  /* Hero */
+  .hero {
+    text-align: center;
+    padding: 80px 24px 60px;
+    background: var(--bg2);
+  }
+  .hero-icon {
+    width: 96px; height: 96px; border-radius: 22px;
+    background: var(--text);
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+  }
+  .hero-icon svg { width: 52px; height: 52px; }
+  .hero h1 { font-size: 48px; font-weight: 700; letter-spacing: -1px; margin-bottom: 12px; }
+  .hero p { font-size: 19px; color: var(--text2); max-width: 520px; margin: 0 auto 32px; }
+  .badge-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .badge {
+    padding: 6px 14px; border-radius: 20px;
+    font-size: 13px; font-weight: 500;
+    background: var(--card); color: var(--text2);
+    border: 1px solid var(--border);
+  }
+
+  /* Section */
+  section { padding: 72px 24px; max-width: 1000px; margin: 0 auto; }
+  section + section { border-top: 1px solid var(--border); }
+  .section-label { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: var(--text2); text-transform: uppercase; margin-bottom: 8px; }
+  .section-title { font-size: 36px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 12px; }
+  .section-sub { font-size: 17px; color: var(--text2); margin-bottom: 48px; max-width: 600px; }
+
+  /* Screenshots */
+  .screenshots-grid {
+    display: flex; gap: 24px; overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 16px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .shot-card {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    width: 220px;
+  }
+  .shot-frame {
+    width: 220px; height: 476px;
+    background: #000;
+    border-radius: 30px;
+    border: 6px solid #2c2c2e;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px #3a3a3c, 0 16px 40px rgba(0,0,0,0.4);
+  }
+  .shot-frame-light {
+    background: #f2f2f7;
+    border-color: #d1d1d6;
+    box-shadow: 0 0 0 1px #c7c7cc, 0 16px 40px rgba(0,0,0,0.15);
+  }
+  .shot-di { position: absolute; top: 7px; left: 50%; transform: translateX(-50%); width: 68px; height: 19px; background: #000; border-radius: 10px; z-index: 5; }
+  .shot-screen { width: 100%; height: 100%; display: flex; flex-direction: column; font-size: 8px; color: #fff; }
+  .shot-screen-light { color: #000; }
+  .shot-status { height: 32px; display: flex; align-items: flex-end; justify-content: space-between; padding: 0 14px 4px; flex-shrink: 0; font-size: 8px; font-weight: 600; }
+  .shot-label { text-align: center; margin-top: 12px; font-size: 13px; color: var(--text2); font-weight: 500; }
+
+  /* Shot inner content */
+  .shot-content { flex: 1; padding: 4px 10px; overflow: hidden; }
+  .shot-title-lg { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+  .shot-title-lg-light { color: #000; }
+  .shot-row { display: flex; align-items: center; gap: 6px; padding: 5px 0; border-bottom: 0.5px solid rgba(255,255,255,0.08); }
+  .shot-row-light { border-bottom-color: rgba(0,0,0,0.06); }
+  .shot-row-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.3); flex-shrink: 0; }
+  .shot-row-dot-rec { background: #fff; animation: pulse 1s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  .shot-row-text { font-size: 7.5px; color: rgba(255,255,255,0.7); flex: 1; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  .shot-row-text-light { color: rgba(0,0,0,0.55); }
+  .shot-row-meta { font-size: 7px; color: rgba(255,255,255,0.4); white-space: nowrap; }
+  .shot-row-meta-light { color: rgba(0,0,0,0.3); }
+
+  /* Record home inner */
+  .shot-rec-center { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+  .shot-rec-btn { width: 52px; height: 52px; border-radius: 50%; background: rgba(255,255,255,0.12); border: 2px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; }
+  .shot-rec-btn-active { background: #fff; border-color: #fff; }
+  .shot-rec-dot { width: 16px; height: 16px; border-radius: 50%; background: rgba(255,255,255,0.7); }
+  .shot-rec-dot-active { background: #000; }
+  .shot-rec-time { font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .shot-rec-meter { width: 80px; height: 4px; background: rgba(255,255,255,0.15); border-radius: 2px; overflow: hidden; }
+  .shot-rec-fill { height: 100%; width: 55%; background: rgba(255,255,255,0.7); border-radius: 2px; }
+  .shot-mic-label { font-size: 7px; color: rgba(255,255,255,0.35); }
+
+  /* Waveform mini */
+  .shot-wf { height: 36px; background: rgba(255,255,255,0.06); border-radius: 6px; margin: 6px 0; display: flex; align-items: center; padding: 0 6px; gap: 1px; overflow: hidden; }
+  .shot-wf-light { background: rgba(0,0,0,0.06); }
+  .shot-wf-bar { flex: 1; background: rgba(255,255,255,0.5); border-radius: 1px; min-width: 1.5px; }
+  .shot-wf-bar-light { background: rgba(0,0,0,0.3); }
+  .shot-wf-bar.past { background: rgba(255,255,255,0.9); }
+  .shot-wf-bar-light.past { background: rgba(0,0,0,0.7); }
+
+  /* Search shot */
+  .shot-search-bar { background: rgba(255,255,255,0.12); border-radius: 6px; padding: 4px 8px; font-size: 7.5px; color: rgba(255,255,255,0.6); margin-bottom: 6px; display: flex; align-items: center; gap: 4px; }
+  .shot-snippet { font-size: 6.5px; color: rgba(255,255,255,0.4); line-height: 1.5; }
+  .shot-snippet-match { color: rgba(255,255,255,0.8); }
+
+  /* Transcript shot */
+  .shot-transcript { font-size: 7px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+  .shot-transcript-hl { background: rgba(255,255,255,0.12); border-radius: 2px; color: rgba(255,255,255,0.9); padding: 0 1px; }
+  .shot-transcript-light { color: rgba(0,0,0,0.5); }
+  .shot-transcript-hl-light { background: rgba(0,0,0,0.08); color: rgba(0,0,0,0.85); }
+
+  /* Tab bar mini */
+  .shot-tabbar { height: 38px; border-top: 0.5px solid rgba(255,255,255,0.1); display: flex; align-items: flex-start; padding-top: 6px; flex-shrink: 0; }
+  .shot-tabbar-light { border-top-color: rgba(0,0,0,0.08); }
+  .shot-tab { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 1.5px; font-size: 6px; color: rgba(255,255,255,0.35); }
+  .shot-tab-light { color: rgba(0,0,0,0.3); }
+  .shot-tab.active { color: #fff; }
+  .shot-tab-light.active { color: #000; }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .step-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+  }
+  .step-num { font-size: 13px; font-weight: 600; color: var(--text2); margin-bottom: 8px; }
+  .step-title { font-size: 19px; font-weight: 600; margin-bottom: 8px; }
+  .step-desc { font-size: 15px; color: var(--text2); line-height: 1.55; }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; gap: 0; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-q {
+    width: 100%; text-align: left; padding: 20px 0;
+    font-size: 17px; font-weight: 500; color: var(--text);
+    background: none; border: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: inherit; gap: 16px;
+  }
+  .faq-q:hover { color: var(--text2); }
+  .faq-chevron { font-size: 18px; color: var(--text2); flex-shrink: 0; transition: transform 0.2s; }
+  .faq-item.open .faq-chevron { transform: rotate(180deg); }
+  .faq-a { display: none; padding: 0 0 20px; font-size: 15px; color: var(--text2); line-height: 1.6; }
+  .faq-item.open .faq-a { display: block; }
+
+  /* Contact */
+  .contact-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 48px;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .contact-card h3 { font-size: 28px; font-weight: 700; margin-bottom: 12px; }
+  .contact-card p { font-size: 17px; color: var(--text2); margin-bottom: 24px; }
+  .contact-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--text); color: var(--bg);
+    border-radius: 980px; font-size: 15px; font-weight: 500;
+    text-decoration: none;
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 24px;
+    text-align: center;
+    font-size: 13px; color: var(--text2);
+    display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+  }
+  footer a { color: var(--text2); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+
+  /* i18n */
+  [data-en], [data-ja] { }
+  html[data-lang="en"] [data-ja] { display: none !important; }
+  html[data-lang="ja"] [data-en] { display: none !important; }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 34px; }
+    .section-title { font-size: 28px; }
+    .contact-card { padding: 32px 24px; }
+    .contact-card h3 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 18 18" fill="white">
+        <circle cx="9" cy="9" r="7" stroke="white" stroke-width="1.5" fill="none"/>
+        <circle cx="9" cy="9" r="3.5" fill="white"/>
+      </svg>
+    </div>
+    <span class="nav-logo-name">RecordQuick</span>
+  </a>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="btn-ja" onclick="setLang('ja')">日本語</button>
+    </div>
+    <a href="privacy.html" class="nav-privacy">
+      <span data-en>Privacy Policy</span>
+      <span data-ja>プライバシーポリシー</span>
+    </a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-icon">
+    <svg viewBox="0 0 52 52" fill="white">
+      <circle cx="26" cy="26" r="20" stroke="white" stroke-width="3" fill="none"/>
+      <circle cx="26" cy="26" r="9" fill="white"/>
+    </svg>
+  </div>
+  <h1>RecordQuick</h1>
+  <p data-en>Professional audio recording for iPhone, iPad, Mac, and Apple Watch. Crystal-clear recordings with transcription in 30+ languages.</p>
+  <p data-ja>iPhone・iPad・Mac・Apple Watch 対応のプロ品質ボイスレコーダー。30言語以上の文字起こし機能を搭載。</p>
+  <div class="badge-row">
+    <span class="badge" data-en>iPhone &amp; iPad</span>
+    <span class="badge" data-en>Mac</span>
+    <span class="badge" data-en>Apple Watch</span>
+    <span class="badge" data-en>30+ Languages</span>
+    <span class="badge" data-en>iCloud Sync</span>
+    <span class="badge" data-ja>iPhone・iPad</span>
+    <span class="badge" data-ja>Mac</span>
+    <span class="badge" data-ja>Apple Watch</span>
+    <span class="badge" data-ja>30言語以上対応</span>
+    <span class="badge" data-ja>iCloud同期</span>
+  </div>
+</div>
+
+<!-- Screenshots -->
+<section id="screenshots">
+  <div class="section-label" data-en>Screenshots</div>
+  <div class="section-label" data-ja>スクリーンショット</div>
+  <div class="section-title" data-en>See it in action</div>
+  <div class="section-title" data-ja>アプリの画面</div>
+  <div class="section-sub" data-en>A clean, monochrome design keeps the focus on your recordings — not on the interface.</div>
+  <div class="section-sub" data-ja>シンプルなモノクロデザインで、操作ではなく録音に集中できます。</div>
+
+  <div class="screenshots-grid">
+
+    <!-- 1: Record idle -->
+    <div class="shot-card">
+      <div class="shot-frame">
+        <div class="shot-di"></div>
+        <div class="shot-screen">
+          <div class="shot-status">
+            <span>9:41</span>
+            <span>●●●</span>
+          </div>
+          <div class="shot-content">
+            <div class="shot-rec-center">
+              <div class="shot-mic-label">Built-in Microphone</div>
+              <div class="shot-rec-btn">
+                <div class="shot-rec-dot"></div>
+              </div>
+              <div class="shot-rec-time">0:00:00</div>
+              <div class="shot-rec-meter"><div class="shot-rec-fill" style="width:0%"></div></div>
+            </div>
+          </div>
+          <div class="shot-tabbar">
+            <div class="shot-tab active"><span>⏺</span><span>Record</span></div>
+            <div class="shot-tab"><span>≡</span><span>Library</span></div>
+            <div class="shot-tab"><span>⚙</span><span>Settings</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="shot-label" data-en>Home — Idle</div>
+      <div class="shot-label" data-ja>ホーム（待機中）</div>
+    </div>
+
+    <!-- 2: Recording active -->
+    <div class="shot-card">
+      <div class="shot-frame">
+        <div class="shot-di"></div>
+        <div class="shot-screen">
+          <div class="shot-status">
+            <span>9:41</span>
+            <span>●●●</span>
+          </div>
+          <div class="shot-content">
+            <div class="shot-rec-center">
+              <div class="shot-mic-label">Built-in Microphone</div>
+              <div class="shot-rec-btn shot-rec-btn-active">
+                <div class="shot-rec-dot shot-rec-dot-active"></div>
+              </div>
+              <div class="shot-rec-time">0:01:24</div>
+              <div class="shot-rec-meter"><div class="shot-rec-fill" style="width:65%"></div></div>
+            </div>
+          </div>
+          <div class="shot-tabbar">
+            <div class="shot-tab active"><span>⏺</span><span>Record</span></div>
+            <div class="shot-tab"><span>≡</span><span>Library</span></div>
+            <div class="shot-tab"><span>⚙</span><span>Settings</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="shot-label" data-en>Recording Active</div>
+      <div class="shot-label" data-ja>録音中</div>
+    </div>
+
+    <!-- 3: Library -->
+    <div class="shot-card">
+      <div class="shot-frame">
+        <div class="shot-di"></div>
+        <div class="shot-screen">
+          <div class="shot-status">
+            <span>9:41</span>
+            <span>●●●</span>
+          </div>
+          <div class="shot-content">
+            <div class="shot-title-lg">Library</div>
+            <div style="font-size:6.5px;color:rgba(255,255,255,0.4);margin-bottom:4px">Today</div>
+            <div class="shot-row"><div class="shot-row-dot shot-row-dot-rec"></div><div class="shot-row-text">Team standup</div><div class="shot-row-meta">12:34</div></div>
+            <div class="shot-row"><div class="shot-row-dot"></div><div class="shot-row-text">Client call – project review</div><div class="shot-row-meta">31:07</div></div>
+            <div style="font-size:6.5px;color:rgba(255,255,255,0.4);margin:4px 0 2px">Yesterday</div>
+            <div class="shot-row"><div class="shot-row-dot"></div><div class="shot-row-text">Voice memo – ideas</div><div class="shot-row-meta">04:52</div></div>
+            <div class="shot-row"><div class="shot-row-dot"></div><div class="shot-row-text">Interview session 3</div><div class="shot-row-meta">58:11</div></div>
+          </div>
+          <div class="shot-tabbar">
+            <div class="shot-tab"><span>⏺</span><span>Record</span></div>
+            <div class="shot-tab active"><span>≡</span><span>Library</span></div>
+            <div class="shot-tab"><span>⚙</span><span>Settings</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="shot-label" data-en>Library</div>
+      <div class="shot-label" data-ja>ライブラリ</div>
+    </div>
+
+    <!-- 4: Playback + Transcript (light) -->
+    <div class="shot-card">
+      <div class="shot-frame shot-frame-light">
+        <div class="shot-di" style="background:#000"></div>
+        <div class="shot-screen shot-screen-light" style="background:#f2f2f7">
+          <div class="shot-status" style="color:#000">
+            <span>9:41</span>
+            <span>●●●</span>
+          </div>
+          <div class="shot-content">
+            <div style="font-size:9px;font-weight:600;color:#000;margin-bottom:6px">Team standup</div>
+            <div class="shot-wf shot-wf-light" id="ss-wf-l"></div>
+            <div style="display:flex;justify-content:space-between;font-size:6.5px;color:#888;margin-bottom:6px"><span>05:13</span><span>12:34</span></div>
+            <div style="display:flex;justify-content:center;gap:16px;font-size:11px;color:#000;margin-bottom:6px">
+              <span>↺15</span><span style="font-size:18px">⏸</span><span>↻15</span>
+            </div>
+            <div style="background:#fff;border-radius:6px;padding:8px;font-size:6.5px">
+              <div style="font-weight:600;color:#000;margin-bottom:4px">Transcript <span style="color:#888;font-weight:400">日本語</span></div>
+              <div class="shot-transcript shot-transcript-light">
+                今日のスタンドアップを始めましょう。<span class="shot-transcript-hl shot-transcript-hl-light">昨日はAPIの統合テストを完了しました。</span>今日はフロントエンドのレビューを予定しています。
+              </div>
+            </div>
+          </div>
+          <div class="shot-tabbar shot-tabbar-light">
+            <div class="shot-tab shot-tab-light"><span>⏺</span><span>Record</span></div>
+            <div class="shot-tab shot-tab-light active"><span>≡</span><span>Library</span></div>
+            <div class="shot-tab shot-tab-light"><span>⚙</span><span>Settings</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="shot-label" data-en>Playback &amp; Transcript</div>
+      <div class="shot-label" data-ja>再生・文字起こし</div>
+    </div>
+
+    <!-- 5: Search -->
+    <div class="shot-card">
+      <div class="shot-frame">
+        <div class="shot-di"></div>
+        <div class="shot-screen">
+          <div class="shot-status">
+            <span>9:41</span>
+            <span>●●●</span>
+          </div>
+          <div class="shot-content">
+            <div class="shot-title-lg">Library</div>
+            <div class="shot-search-bar">
+              <span style="opacity:.5">🔍</span>
+              <span>統合テスト</span>
+            </div>
+            <div style="font-size:6.5px;color:rgba(255,255,255,0.4);margin-bottom:4px">3 results</div>
+            <div class="shot-row">
+              <div class="shot-row-dot"></div>
+              <div style="flex:1;overflow:hidden">
+                <div class="shot-row-text">Team standup</div>
+                <div class="shot-snippet">…昨日はAPIの<span class="shot-snippet-match">統合テスト</span>を完了しました…</div>
+              </div>
+              <div class="shot-row-meta">12:34</div>
+            </div>
+            <div class="shot-row">
+              <div class="shot-row-dot"></div>
+              <div style="flex:1;overflow:hidden">
+                <div class="shot-row-text">Client call</div>
+                <div class="shot-snippet">…<span class="shot-snippet-match">統合テスト</span>のカバレッジを80%以上に…</div>
+              </div>
+              <div class="shot-row-meta">31:07</div>
+            </div>
+          </div>
+          <div class="shot-tabbar">
+            <div class="shot-tab"><span>⏺</span><span>Record</span></div>
+            <div class="shot-tab active"><span>≡</span><span>Library</span></div>
+            <div class="shot-tab"><span>⚙</span><span>Settings</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="shot-label" data-en>Search</div>
+      <div class="shot-label" data-ja>検索</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- How to use -->
+<section id="how-to-use">
+  <div class="section-label" data-en>How to Use</div>
+  <div class="section-label" data-ja>使い方</div>
+  <div class="section-title" data-en>Start in seconds</div>
+  <div class="section-title" data-ja>すぐに使い始められます</div>
+  <div class="section-sub" data-en>RecordQuick is designed to get out of the way so you can focus on the moment.</div>
+  <div class="section-sub" data-ja>RecordQuick はシンプルな操作で、今この瞬間に集中できます。</div>
+
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num" data-en>STEP 1</div>
+      <div class="step-num" data-ja>STEP 1</div>
+      <div class="step-title" data-en>Tap the record button</div>
+      <div class="step-title" data-ja>録音ボタンをタップ</div>
+      <div class="step-desc" data-en>Open the app and tap the large button in the center. Recording starts immediately. Grant microphone permission on first launch.</div>
+      <div class="step-desc" data-ja>アプリを開き、画面中央の大きなボタンをタップすると録音が始まります。初回起動時にマイクのアクセス許可を求めます。</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num" data-en>STEP 2</div>
+      <div class="step-num" data-ja>STEP 2</div>
+      <div class="step-title" data-en>Pause or stop</div>
+      <div class="step-title" data-ja>一時停止・停止</div>
+      <div class="step-desc" data-en>Tap again to stop and save your recording. Swipe up during recording to pause — swipe up again to resume, or tap the stop area to finish.</div>
+      <div class="step-desc" data-ja>再度タップして停止・保存。録音中に上へスワイプすると一時停止、もう一度スワイプで再開できます。</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num" data-en>STEP 3</div>
+      <div class="step-num" data-ja>STEP 3</div>
+      <div class="step-title" data-en>Find your recordings</div>
+      <div class="step-title" data-ja>録音を確認する</div>
+      <div class="step-desc" data-en>Switch to the Library tab to see all recordings sorted by date. Tap any recording to play it back. Rename, share, or delete from the detail view.</div>
+      <div class="step-desc" data-ja>ライブラリタブで録音一覧を確認。タップで再生。詳細画面から名前の変更・共有・削除ができます。</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num" data-en>STEP 4</div>
+      <div class="step-num" data-ja>STEP 4</div>
+      <div class="step-title" data-en>Transcribe your audio</div>
+      <div class="step-title" data-ja>文字起こし</div>
+      <div class="step-desc" data-en>Open a recording, tap Transcribe, and select a language. On-device speech recognition converts your audio to searchable text — no internet required.</div>
+      <div class="step-desc" data-ja>録音を開いて「文字起こし」をタップし、言語を選択。デバイス内の音声認識で検索可能なテキストに変換します。インターネット不要。</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num" data-en>STEP 5</div>
+      <div class="step-num" data-ja>STEP 5</div>
+      <div class="step-title" data-en>Search across everything</div>
+      <div class="step-title" data-ja>全録音を横断検索</div>
+      <div class="step-desc" data-en>Use the search bar in Library to find recordings by title or by words in their transcripts. Results highlight exactly where a match was found.</div>
+      <div class="step-desc" data-ja>ライブラリの検索バーからタイトルや文字起こし内のキーワードで検索。ヒット箇所がハイライト表示されます。</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num" data-en>STEP 6</div>
+      <div class="step-num" data-ja>STEP 6</div>
+      <div class="step-title" data-en>Share and export</div>
+      <div class="step-title" data-ja>共有・エクスポート</div>
+      <div class="step-desc" data-en>Share audio files (M4A, WAV, AIFF) or transcripts as plain text. Use the system share sheet to send to any app, AirDrop, Mail, or Files.</div>
+      <div class="step-desc" data-ja>音声ファイル（M4A・WAV・AIFF）やテキストをシステム共有シートでAirDrop・メール・ファイルなどへ送れます。</div>
+    </div>
+  </div>
+</section>
+
+<!-- Tips -->
+<section id="tips">
+  <div class="section-label" data-en>Tips</div>
+  <div class="section-label" data-ja>ヒント</div>
+  <div class="section-title" data-en>Power features</div>
+  <div class="section-title" data-ja>便利な機能</div>
+  <div class="section-sub" data-en>Discover features that make RecordQuick indispensable.</div>
+  <div class="section-sub" data-ja>RecordQuick をもっと活用するためのヒントです。</div>
+
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-title" data-en>Background Recording</div>
+      <div class="step-title" data-ja>バックグラウンド録音</div>
+      <div class="step-desc" data-en>Recording continues even when you lock your screen or switch to another app. A live indicator stays visible in the Dynamic Island or status bar.</div>
+      <div class="step-desc" data-ja>画面ロック中や別アプリ使用中も録音は継続します。Dynamic Island またはステータスバーに録音中インジケーターが表示されます。</div>
+    </div>
+    <div class="step-card">
+      <div class="step-title" data-en>Apple Watch</div>
+      <div class="step-title" data-ja>Apple Watch</div>
+      <div class="step-desc" data-en>Record independently on Apple Watch without your iPhone. Recordings are automatically transferred when your iPhone is in range.</div>
+      <div class="step-desc" data-ja>iPhone なしで Apple Watch 単体で録音できます。iPhone が近くにあると自動的に転送されます。</div>
+    </div>
+    <div class="step-card">
+      <div class="step-title" data-en>Language Switcher</div>
+      <div class="step-title" data-ja>言語切り替え</div>
+      <div class="step-desc" data-en>Change the app's interface language anytime in Settings — no system restart needed. The transcription language is set separately per recording.</div>
+      <div class="step-desc" data-ja>設定からいつでもアプリの表示言語を切り替えられます。再起動不要。文字起こしの言語は録音ごとに個別に設定できます。</div>
+    </div>
+    <div class="step-card">
+      <div class="step-title" data-en>Recently Deleted</div>
+      <div class="step-title" data-ja>最近削除した項目</div>
+      <div class="step-desc" data-en>Deleted recordings go to a Recently Deleted area where they can be recovered. Use Empty Trash to permanently remove them when you're sure.</div>
+      <div class="step-desc" data-ja>削除した録音は「最近削除した項目」に移動し、復元できます。完全に削除するには「ゴミ箱を空にする」を実行してください。</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-label" data-en>FAQ</div>
+  <div class="section-label" data-ja>よくある質問</div>
+  <div class="section-title" data-en>Frequently Asked Questions</div>
+  <div class="section-title" data-ja>よくある質問</div>
+  <div class="section-sub" data-en>Find quick answers to common questions.</div>
+  <div class="section-sub" data-ja>よくある疑問にお答えします。</div>
+
+  <div class="faq-list">
+    <!-- EN -->
+    <div class="faq-item" data-en>
+      <button class="faq-q" onclick="toggleFaq(this)">
+        How long can I record?
+        <span class="faq-chevron">›</span>
+      </button>
+      <div class="faq-a">Recording duration is limited only by your device's available storage. RecordQuick does not impose an arbitrary time limit. Monitor storage in Settings &gt; General &gt; iPhone Storage.</div>
+    </div>
+    <div class="faq-item" data-en>
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Does transcription require internet?
+        <span class="faq-chevron">›</span>
+      </button>
+      <div class="faq-a">No. RecordQuick uses on-device Apple speech recognition. Your audio never leaves your device for transcription. An internet connection is not required.</div>
+    </div>
+    <div class="faq-item" data-en>
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Which audio formats does RecordQuick export?
+        <span class="faq-chevron">›</span>
+      </button>
+      <div class="faq-a">RecordQuick supports M4A (AAC), WAV, and AIFF export formats. Select your preferred format in Settings before recording, or export in a different format from the detail view.</div>
+    </div>
+    <div class="faq-item" data-en>
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Can I use a Bluetooth microphone or AirPods?
+        <span class="faq-chevron">›</span>
+      </button>
+      <div class="faq-a">Yes. RecordQuick uses the system audio route automatically. Connect your AirPods or Bluetooth microphone before recording and the app will use that input.</div>
+    </div>
+    <div class="faq-item" data-en>
+      <button class="faq-q" onclick="toggleFaq(this)">
+        What happens if a call interrupts my recording?
+        <span class="faq-chevron">›</span>
+      </button>
+      <div class="faq-a">RecordQuick saves all audio recorded up to the interruption. A partial recording is preserved so you don't lose your work. You can resume or start a new recording after the call.</div>
+    </div>
+    <!-- JA -->
+    <div class="faq-item" data-ja>
+      <button class="faq-q" onclick="toggleFaq(this)">
+        どのくらいの時間録音できますか？
+        <span class="faq-chevron">›</span>
+      </button>
+      <div class="faq-a">録音時間はデバイスの空きストレージの容量のみに制限されます。RecordQuick には時間制限がありません。空き容量は「設定 → 一般 → iPhoneストレージ」で確認できます。</div>
+    </div>
+    <div class="faq-item" data-ja>
+      <button class="faq-q" onclick="toggleFaq(this)">
+        文字起こしにインターネットは必要ですか？
+        <span class="faq-chevron">›</span>
+      </button>
+      <div class="faq-a">不要です。RecordQuick はデバイス内の Apple 音声認識を使用します。音声データは文字起こしのために外部へ送信されません。</div>
+    </div>
+    <div class="faq-item" data-ja>
+      <button class="faq-q" onclick="toggleFaq(this)">
+        どの音声フォーマットで書き出せますか？
+        <span class="faq-chevron">›</span>
+      </button>
+      <div class="faq-a">M4A（AAC）・WAV・AIFF 形式に対応しています。設定で録音前にフォーマットを選択するか、詳細画面から任意のフォーマットでエクスポートできます。</div>
+    </div>
+    <div class="faq-item" data-ja>
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Bluetooth マイクや AirPods は使えますか？
+        <span class="faq-chevron">›</span>
+      </button>
+      <div class="faq-a">使えます。RecordQuick はシステムの音声ルートを自動的に使用します。録音前に AirPods または Bluetooth マイクを接続するとそのマイクが入力として使われます。</div>
+    </div>
+    <div class="faq-item" data-ja>
+      <button class="faq-q" onclick="toggleFaq(this)">
+        録音中に電話が入った場合はどうなりますか？
+        <span class="faq-chevron">›</span>
+      </button>
+      <div class="faq-a">RecordQuick は中断前に録音された音声をすべて保存します。途中までの録音が保持されるため、データは失われません。通話後に録音を再開または新規開始できます。</div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="contact-card">
+    <h3 data-en>Need help?</h3>
+    <h3 data-ja>お問い合わせ</h3>
+    <p data-en>If your question isn't answered above, send us an email and we'll get back to you as soon as possible.</p>
+    <p data-ja>上記で解決しない場合は、メールでお問い合わせください。できるだけ早くご返信します。</p>
+    <a href="mailto:kouhei1@gmail.com" class="contact-btn">
+      <span data-en>Email Support</span>
+      <span data-ja>メールで問い合わせる</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 RecordQuick</span>
+  <a href="privacy.html" data-en>Privacy Policy</a>
+  <a href="privacy.html" data-ja>プライバシーポリシー</a>
+  <a href="mailto:kouhei1@gmail.com">kouhei1@gmail.com</a>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.documentElement.setAttribute('data-lang', lang);
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
+  localStorage.setItem('rq-lang', lang);
+}
+
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  item.classList.toggle('open');
+}
+
+// Restore language preference
+const saved = localStorage.getItem('rq-lang');
+if (saved === 'ja') setLang('ja');
+
+// Waveform for playback shot
+(function() {
+  const el = document.getElementById('ss-wf-l');
+  if (!el) return;
+  const hh = [0.4,0.6,0.8,0.5,0.9,0.7,0.4,0.6,0.8,0.5,0.7,0.9,0.4,0.6,0.5,0.8,0.4,0.7,0.5,0.9,0.6,0.4,0.8,0.5,0.7,0.4,0.6,0.8,0.5,0.7];
+  hh.forEach((h, i) => {
+    const b = document.createElement('div');
+    b.className = 'shot-wf-bar shot-wf-bar-light' + (i < 12 ? ' past' : '');
+    b.style.height = (h * 28 + 4) + 'px';
+    el.appendChild(b);
+  });
+})();
+</script>
+</body>
+</html>
