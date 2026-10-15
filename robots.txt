@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://record-quick.margheritaworks.com/sitemap.xml
